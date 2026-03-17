@@ -1,0 +1,75 @@
+﻿Starting Standalone Recommender Test...
+Existing indices loaded successfully (Size: 145).
+Recommender Initialized successfully!
+
+Results for 'phones':
+
+- iPhone 14 Plus (Ocean Blue)
+  Final Similar: iPhone 15 Pro Max (Ocean Blue), OnePlus 12 (Ocean Blue), Xiaomi 14 Ultra (Ocean Blue)
+  Raw Candidates:
+    * iPhone 14 Plus (Ocean Blue)
+    * iPhone 14 Plus (Pure White)
+    * iPhone 14 Plus (Space Gray)
+    * iPhone 15 Pro Max (Ocean Blue)
+    * iPhone 14 Plus (Midnight Black)
+    * iPhone 14 Plus (Platinum Silver)
+    * OnePlus 12 (Ocean Blue)
+    * iPhone 15 Pro Max (Space Gray)
+    * Xiaomi 14 Ultra (Ocean Blue)
+    * Nothing Phone (2) (Ocean Blue)
+
+- iPhone 15 Pro Max (Ocean Blue)
+  Final Similar: iPhone 14 Plus (Ocean Blue), OnePlus 12 (Ocean Blue), Dell XPS 15 (Ocean Blue)
+  Raw Candidates:
+    * iPhone 15 Pro Max (Ocean Blue)
+    * iPhone 15 Pro Max (Pure White)
+    * iPhone 15 Pro Max (Space Gray)
+    * iPhone 15 Pro Max (Midnight Black)
+    * iPhone 15 Pro Max (Platinum Silver)
+    * iPhone 14 Plus (Ocean Blue)
+    * OnePlus 12 (Ocean Blue)
+    * Dell XPS 15 (Ocean Blue)
+    * Xiaomi 14 Ultra (Ocean Blue)
+    * iPad Pro M2 (Ocean Blue)
+
+- Nothing Phone (2) (Pure White)
+  Final Similar: iPhone 14 Plus (Pure White), Google Pixel 8 Pro (Pure White), Samsung Galaxy S24 Ultra (Pure White)
+  Raw Candidates:
+    * Nothing Phone (2) (Pure White)
+    * Nothing Phone (2) (Midnight Black)
+    * Nothing Phone (2) (Space Gray)
+    * Nothing Phone (2) (Ocean Blue)
+    * Nothing Phone (2) (Platinum Silver)
+    * iPhone 14 Plus (Pure White)
+    * iPhone 15 Pro Max (Pure White)
+    * Sony Xperia 1 V (Pure White)
+    * iPhone 15 Pro Max (Space Gray)
+    * JBL Flip 6 (Pure White)
+
+- Marshal Major IV (Space Gray)
+  Final Similar: Sennheiser Momentum 4 (Space Gray), Apple AirPods Max (Space Gray), Bose QuietComfort Ultra (Space Gray)
+  Raw Candidates:
+    * Marshal Major IV (Space Gray)
+    * Marshal Major IV (Pure White)
+    * Marshal Major IV (Midnight Black)
+    * Marshal Major IV (Platinum Silver)
+    * Marshal Major IV (Ocean Blue)
+    * MacBook Pro 16 M3 Max (Space Gray)
+    * GoPro HERO12 Black (Space Gray)
+    * Samsung Odyssey G9 (Space Gray)
+    * DJI Mini 4 Pro (Space Gray)
+    * Samsung Galaxy Watch 6 (Space Gray)
+
+- Sennheiser Momentum 4 (Pure White)
+  Final Similar: Sony WF-1000XM5 (Pure White), Sony WH-1000XM5 (Pure White), Bose QuietComfort Ultra (Pure White)
+  Raw Candidates:
+    * Sennheiser Momentum 4 (Pure White)
+    * Sennheiser Momentum 4 (Space Gray)
+    * Sennheiser Momentum 4 (Midnight Black)
+    * Sennheiser Momentum 4 (Ocean Blue)
+    * Sennheiser Momentum 4 (Platinum Silver)
+    * Bose QuietComfort Ultra (Pure White)
+    * JBL Flip 6 (Pure White)
+    * Bose SoundLink Flex (Pure White)
+    * Sony WH-1000XM5 (Pure White)
+    * Sony WF-1000XM5 (Pure White)

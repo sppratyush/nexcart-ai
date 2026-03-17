@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+*.db
+*.sqlite3
+
+# ML
+.ipynb_checkpoints/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db

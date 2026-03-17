@@ -1,0 +1,25 @@
+
+services:
+  nexcart-backend:
+    build: .
+    container_name: nexcart_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATA_PATH=data/raw/sample-data.csv
+    volumes:
+      - ./data:/app/data
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+
+  nexcart-frontend:
+    build: .
+    container_name: nexcart_frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://nexcart-backend:8000
+    depends_on:
+      - nexcart-backend
+    volumes:
+      - ./data:/app/data
+    command: streamlit run frontend/app.py --server.port 8501 --server.address 0.0.0.0
