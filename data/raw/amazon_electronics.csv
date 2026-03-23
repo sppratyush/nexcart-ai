@@ -1,146 +1,76 @@
-uniq_id,product_name,product_description,category,rating,is_trending,is_best_seller
-PROD-0000,Sony WH-1000XM5 (Midnight Black),Industry-leading noise canceling wireless headphones with auto NC optimizer. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Audio,4.9,0,1
-PROD-0001,Sony WH-1000XM5 (Pure White),Industry-leading noise canceling wireless headphones with auto NC optimizer. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Audio,4.9,1,0
-PROD-0002,Sony WH-1000XM5 (Ocean Blue),Industry-leading noise canceling wireless headphones with auto NC optimizer. This Ocean Blue edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.7,0,0
-PROD-0003,Sony WH-1000XM5 (Space Gray),Industry-leading noise canceling wireless headphones with auto NC optimizer. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.1,0,0
-PROD-0004,Sony WH-1000XM5 (Platinum Silver),Industry-leading noise canceling wireless headphones with auto NC optimizer. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.0,0,0
-PROD-0005,Apple AirPods Max (Midnight Black),The pinnacle of over-ear headphones with high-fidelity audio and spatial sound. This Midnight Black edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.7,0,0
-PROD-0006,Apple AirPods Max (Pure White),The pinnacle of over-ear headphones with high-fidelity audio and spatial sound. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Audio,3.9,0,0
-PROD-0007,Apple AirPods Max (Ocean Blue),The pinnacle of over-ear headphones with high-fidelity audio and spatial sound. This Ocean Blue edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.3,1,0
-PROD-0008,Apple AirPods Max (Space Gray),The pinnacle of over-ear headphones with high-fidelity audio and spatial sound. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Audio,3.9,1,0
-PROD-0009,Apple AirPods Max (Platinum Silver),The pinnacle of over-ear headphones with high-fidelity audio and spatial sound. This Platinum Silver edition offers a premium look and feel. Award Winning for 2024.,Audio,4.7,0,0
-PROD-0010,Bose QuietComfort Ultra (Midnight Black),World-class noise cancellation headphones for pure concentration. This Midnight Black edition offers a premium look and feel. Trending for 2024.,Audio,4.2,0,0
-PROD-0011,Bose QuietComfort Ultra (Pure White),World-class noise cancellation headphones for pure concentration. This Pure White edition offers a premium look and feel. Editor's Choice for 2024.,Audio,3.9,0,0
-PROD-0012,Bose QuietComfort Ultra (Ocean Blue),World-class noise cancellation headphones for pure concentration. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Audio,4.4,0,0
-PROD-0013,Bose QuietComfort Ultra (Space Gray),World-class noise cancellation headphones for pure concentration. This Space Gray edition offers a premium look and feel. Trending for 2024.,Audio,4.7,0,0
-PROD-0014,Bose QuietComfort Ultra (Platinum Silver),World-class noise cancellation headphones for pure concentration. This Platinum Silver edition offers a premium look and feel. Trending for 2024.,Audio,4.2,0,0
-PROD-0015,Sennheiser Momentum 4 (Midnight Black),Premium sound quality wireless headphones with 60-hour battery life. This Midnight Black edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.5,0,0
-PROD-0016,Sennheiser Momentum 4 (Pure White),Premium sound quality wireless headphones with 60-hour battery life. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Audio,4.4,1,0
-PROD-0017,Sennheiser Momentum 4 (Ocean Blue),Premium sound quality wireless headphones with 60-hour battery life. This Ocean Blue edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.2,0,0
-PROD-0018,Sennheiser Momentum 4 (Space Gray),Premium sound quality wireless headphones with 60-hour battery life. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.4,1,0
-PROD-0019,Sennheiser Momentum 4 (Platinum Silver),Premium sound quality wireless headphones with 60-hour battery life. This Platinum Silver edition offers a premium look and feel. Award Winning for 2024.,Audio,4.2,0,0
-PROD-0020,JBL Flip 6 (Midnight Black),Powerful portable Bluetooth speaker with deep bass and waterproof design. This Midnight Black edition offers a premium look and feel. Trending for 2024.,Audio,4.9,0,0
-PROD-0021,JBL Flip 6 (Pure White),Powerful portable Bluetooth speaker with deep bass and waterproof design. This Pure White edition offers a premium look and feel. Trending for 2024.,Audio,4.8,0,0
-PROD-0022,JBL Flip 6 (Ocean Blue),Powerful portable Bluetooth speaker with deep bass and waterproof design. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Audio,5.0,0,0
-PROD-0023,JBL Flip 6 (Space Gray),Powerful portable Bluetooth speaker with deep bass and waterproof design. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.9,1,0
-PROD-0024,JBL Flip 6 (Platinum Silver),Powerful portable Bluetooth speaker with deep bass and waterproof design. This Platinum Silver edition offers a premium look and feel. Award Winning for 2024.,Audio,4.5,0,0
-PROD-0025,Sony WF-1000XM5 (Midnight Black),Truly wireless noise cancelling earbuds with sleek design and rich sound. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Audio,4.5,1,0
-PROD-0026,Sony WF-1000XM5 (Pure White),Truly wireless noise cancelling earbuds with sleek design and rich sound. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Audio,4.7,0,1
-PROD-0027,Sony WF-1000XM5 (Ocean Blue),Truly wireless noise cancelling earbuds with sleek design and rich sound. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Audio,4.1,0,0
-PROD-0028,Sony WF-1000XM5 (Space Gray),Truly wireless noise cancelling earbuds with sleek design and rich sound. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Audio,4.4,1,0
-PROD-0029,Sony WF-1000XM5 (Platinum Silver),Truly wireless noise cancelling earbuds with sleek design and rich sound. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Audio,3.8,0,0
-PROD-0030,Bose SoundLink Flex (Midnight Black),Robust portable speaker with deep bass and waterproof durability. This Midnight Black edition offers a premium look and feel. Editor's Choice for 2024.,Audio,5.0,0,0
-PROD-0031,Bose SoundLink Flex (Pure White),Robust portable speaker with deep bass and waterproof durability. This Pure White edition offers a premium look and feel. Trending for 2024.,Audio,4.8,0,0
-PROD-0032,Bose SoundLink Flex (Ocean Blue),Robust portable speaker with deep bass and waterproof durability. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Audio,4.5,0,0
-PROD-0033,Bose SoundLink Flex (Space Gray),Robust portable speaker with deep bass and waterproof durability. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.5,0,0
-PROD-0034,Bose SoundLink Flex (Platinum Silver),Robust portable speaker with deep bass and waterproof durability. This Platinum Silver edition offers a premium look and feel. Award Winning for 2024.,Audio,4.9,0,0
-PROD-0035,Marshal Major IV (Midnight Black),Iconic wireless on-ear headphones with 80+ hours of battery. This Midnight Black edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.6,0,0
-PROD-0036,Marshal Major IV (Pure White),Iconic wireless on-ear headphones with 80+ hours of battery. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Audio,4.0,0,0
-PROD-0037,Marshal Major IV (Ocean Blue),Iconic wireless on-ear headphones with 80+ hours of battery. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Audio,4.5,0,0
-PROD-0038,Marshal Major IV (Space Gray),Iconic wireless on-ear headphones with 80+ hours of battery. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Audio,4.7,1,1
-PROD-0039,Marshal Major IV (Platinum Silver),Iconic wireless on-ear headphones with 80+ hours of battery. This Platinum Silver edition offers a premium look and feel. Award Winning for 2024.,Audio,4.0,0,0
-PROD-0040,MacBook Pro 16 M3 Max (Midnight Black),Extreme performance for professionals with Liquid Retina XDR. This Midnight Black edition offers a premium look and feel. Trending for 2024.,Computing,4.2,0,0
-PROD-0041,MacBook Pro 16 M3 Max (Pure White),Extreme performance for professionals with Liquid Retina XDR. This Pure White edition offers a premium look and feel. Trending for 2024.,Computing,4.0,0,0
-PROD-0042,MacBook Pro 16 M3 Max (Ocean Blue),Extreme performance for professionals with Liquid Retina XDR. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Computing,4.4,1,1
-PROD-0043,MacBook Pro 16 M3 Max (Space Gray),Extreme performance for professionals with Liquid Retina XDR. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Computing,4.4,0,0
-PROD-0044,MacBook Pro 16 M3 Max (Platinum Silver),Extreme performance for professionals with Liquid Retina XDR. This Platinum Silver edition offers a premium look and feel. Award Winning for 2024.,Computing,4.8,0,0
-PROD-0045,Dell XPS 15 (Midnight Black),Premium Windows laptop with InfinityEdge display and RTX graphics. This Midnight Black edition offers a premium look and feel. Editor's Choice for 2024.,Computing,5.0,0,1
-PROD-0046,Dell XPS 15 (Pure White),Premium Windows laptop with InfinityEdge display and RTX graphics. This Pure White edition offers a premium look and feel. Trending for 2024.,Computing,4.5,1,0
-PROD-0047,Dell XPS 15 (Ocean Blue),Premium Windows laptop with InfinityEdge display and RTX graphics. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Computing,4.5,1,0
-PROD-0048,Dell XPS 15 (Space Gray),Premium Windows laptop with InfinityEdge display and RTX graphics. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Computing,4.2,0,0
-PROD-0049,Dell XPS 15 (Platinum Silver),Premium Windows laptop with InfinityEdge display and RTX graphics. This Platinum Silver edition offers a premium look and feel. Trending for 2024.,Computing,4.8,0,0
-PROD-0050,ASUS ROG Zephyrus G14 (Midnight Black),Compact gaming powerhouse with high refresh rate display. This Midnight Black edition offers a premium look and feel. Trending for 2024.,Computing,4.8,0,0
-PROD-0051,ASUS ROG Zephyrus G14 (Pure White),Compact gaming powerhouse with high refresh rate display. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Computing,4.6,1,0
-PROD-0052,ASUS ROG Zephyrus G14 (Ocean Blue),Compact gaming powerhouse with high refresh rate display. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Computing,3.9,0,0
-PROD-0053,ASUS ROG Zephyrus G14 (Space Gray),Compact gaming powerhouse with high refresh rate display. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Computing,5.0,0,0
-PROD-0054,ASUS ROG Zephyrus G14 (Platinum Silver),Compact gaming powerhouse with high refresh rate display. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Computing,4.7,0,0
-PROD-0055,Lenovo ThinkPad X1 Carbon (Midnight Black),Legendary business laptop with ultra-light carbon fiber chassis. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Computing,4.1,1,0
-PROD-0056,Lenovo ThinkPad X1 Carbon (Pure White),Legendary business laptop with ultra-light carbon fiber chassis. This Pure White edition offers a premium look and feel. Editor's Choice for 2024.,Computing,4.6,0,0
-PROD-0057,Lenovo ThinkPad X1 Carbon (Ocean Blue),Legendary business laptop with ultra-light carbon fiber chassis. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Computing,4.6,0,0
-PROD-0058,Lenovo ThinkPad X1 Carbon (Space Gray),Legendary business laptop with ultra-light carbon fiber chassis. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Computing,3.9,1,0
-PROD-0059,Lenovo ThinkPad X1 Carbon (Platinum Silver),Legendary business laptop with ultra-light carbon fiber chassis. This Platinum Silver edition offers a premium look and feel. Award Winning for 2024.,Computing,4.9,1,0
-PROD-0060,HP Spectre x360 (Midnight Black),Elegant 2-in-1 convertible with stunning OLED touchscreen. This Midnight Black edition offers a premium look and feel. Editor's Choice for 2024.,Computing,4.3,0,0
-PROD-0061,HP Spectre x360 (Pure White),Elegant 2-in-1 convertible with stunning OLED touchscreen. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Computing,4.5,0,0
-PROD-0062,HP Spectre x360 (Ocean Blue),Elegant 2-in-1 convertible with stunning OLED touchscreen. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Computing,4.6,1,0
-PROD-0063,HP Spectre x360 (Space Gray),Elegant 2-in-1 convertible with stunning OLED touchscreen. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Computing,4.2,0,0
-PROD-0064,HP Spectre x360 (Platinum Silver),Elegant 2-in-1 convertible with stunning OLED touchscreen. This Platinum Silver edition offers a premium look and feel. Trending for 2024.,Computing,4.3,1,0
-PROD-0065,Logitech MX Master 3S (Midnight Black),Performance wireless mouse with silent clicks and MagSpeed scrolling. This Midnight Black edition offers a premium look and feel. Trending for 2024.,Computing,4.9,0,0
-PROD-0066,Logitech MX Master 3S (Pure White),Performance wireless mouse with silent clicks and MagSpeed scrolling. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Computing,5.0,0,1
-PROD-0067,Logitech MX Master 3S (Ocean Blue),Performance wireless mouse with silent clicks and MagSpeed scrolling. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Computing,3.8,0,0
-PROD-0068,Logitech MX Master 3S (Space Gray),Performance wireless mouse with silent clicks and MagSpeed scrolling. This Space Gray edition offers a premium look and feel. Trending for 2024.,Computing,3.9,0,0
-PROD-0069,Logitech MX Master 3S (Platinum Silver),Performance wireless mouse with silent clicks and MagSpeed scrolling. This Platinum Silver edition offers a premium look and feel. Award Winning for 2024.,Computing,4.8,0,0
-PROD-0070,Samsung Odyssey G9 (Midnight Black),Ultra-wide 49-inch curved monitor for ultimate gaming setup. This Midnight Black edition offers a premium look and feel. Editor's Choice for 2024.,Computing,4.2,0,0
-PROD-0071,Samsung Odyssey G9 (Pure White),Ultra-wide 49-inch curved monitor for ultimate gaming setup. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Computing,4.4,0,1
-PROD-0072,Samsung Odyssey G9 (Ocean Blue),Ultra-wide 49-inch curved monitor for ultimate gaming setup. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Computing,4.0,0,1
-PROD-0073,Samsung Odyssey G9 (Space Gray),Ultra-wide 49-inch curved monitor for ultimate gaming setup. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Computing,4.4,1,0
-PROD-0074,Samsung Odyssey G9 (Platinum Silver),Ultra-wide 49-inch curved monitor for ultimate gaming setup. This Platinum Silver edition offers a premium look and feel. Award Winning for 2024.,Computing,4.7,0,0
-PROD-0075,iPad Pro M2 (Midnight Black),The most powerful iPad with Liquid Retina XDR and Apple Pencil support. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Computing,4.8,0,0
-PROD-0076,iPad Pro M2 (Pure White),The most powerful iPad with Liquid Retina XDR and Apple Pencil support. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Computing,4.8,0,1
-PROD-0077,iPad Pro M2 (Ocean Blue),The most powerful iPad with Liquid Retina XDR and Apple Pencil support. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Computing,3.8,0,0
-PROD-0078,iPad Pro M2 (Space Gray),The most powerful iPad with Liquid Retina XDR and Apple Pencil support. This Space Gray edition offers a premium look and feel. Trending for 2024.,Computing,4.0,0,0
-PROD-0079,iPad Pro M2 (Platinum Silver),The most powerful iPad with Liquid Retina XDR and Apple Pencil support. This Platinum Silver edition offers a premium look and feel. Trending for 2024.,Computing,4.3,0,1
-PROD-0080,iPhone 15 Pro Max (Midnight Black),Ultimate flagship with Titanium design and A17 Pro chip. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Mobile,3.9,0,0
-PROD-0081,iPhone 15 Pro Max (Pure White),Ultimate flagship with Titanium design and A17 Pro chip. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.1,0,0
-PROD-0082,iPhone 15 Pro Max (Ocean Blue),Ultimate flagship with Titanium design and A17 Pro chip. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.5,1,0
-PROD-0083,iPhone 15 Pro Max (Space Gray),Ultimate flagship with Titanium design and A17 Pro chip. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.5,0,0
-PROD-0084,iPhone 15 Pro Max (Platinum Silver),Ultimate flagship with Titanium design and A17 Pro chip. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,4.7,1,0
-PROD-0085,Samsung Galaxy S24 Ultra (Midnight Black),Powerhouse flagship with Galaxy AI and integrated S Pen. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.7,1,0
-PROD-0086,Samsung Galaxy S24 Ultra (Pure White),Powerhouse flagship with Galaxy AI and integrated S Pen. This Pure White edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,4.0,0,0
-PROD-0087,Samsung Galaxy S24 Ultra (Ocean Blue),Powerhouse flagship with Galaxy AI and integrated S Pen. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Mobile,4.3,0,0
-PROD-0088,Samsung Galaxy S24 Ultra (Space Gray),Powerhouse flagship with Galaxy AI and integrated S Pen. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.9,0,0
-PROD-0089,Samsung Galaxy S24 Ultra (Platinum Silver),Powerhouse flagship with Galaxy AI and integrated S Pen. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,4.6,0,0
-PROD-0090,Google Pixel 8 Pro (Midnight Black),Advanced AI-powered camera and helpful Google experiences. This Midnight Black edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,4.5,0,0
-PROD-0091,Google Pixel 8 Pro (Pure White),Advanced AI-powered camera and helpful Google experiences. This Pure White edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,4.6,1,0
-PROD-0092,Google Pixel 8 Pro (Ocean Blue),Advanced AI-powered camera and helpful Google experiences. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.3,0,0
-PROD-0093,Google Pixel 8 Pro (Space Gray),Advanced AI-powered camera and helpful Google experiences. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,4.4,1,0
-PROD-0094,Google Pixel 8 Pro (Platinum Silver),Advanced AI-powered camera and helpful Google experiences. This Platinum Silver edition offers a premium look and feel. Trending for 2024.,Mobile,5.0,1,0
-PROD-0095,Nothing Phone (2) (Midnight Black),Unique transparent design with Glyph interface. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.4,0,0
-PROD-0096,Nothing Phone (2) (Pure White),Unique transparent design with Glyph interface. This Pure White edition offers a premium look and feel. Trending for 2024.,Mobile,3.8,0,0
-PROD-0097,Nothing Phone (2) (Ocean Blue),Unique transparent design with Glyph interface. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Mobile,4.3,0,0
-PROD-0098,Nothing Phone (2) (Space Gray),Unique transparent design with Glyph interface. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.3,0,0
-PROD-0099,Nothing Phone (2) (Platinum Silver),Unique transparent design with Glyph interface. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,4.0,0,0
-PROD-0100,OnePlus 12 (Midnight Black),Powerful performance with Hasselblad camera and ultra-fast charging. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.2,0,0
-PROD-0101,OnePlus 12 (Pure White),Powerful performance with Hasselblad camera and ultra-fast charging. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.5,1,0
-PROD-0102,OnePlus 12 (Ocean Blue),Powerful performance with Hasselblad camera and ultra-fast charging. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.9,1,0
-PROD-0103,OnePlus 12 (Space Gray),Powerful performance with Hasselblad camera and ultra-fast charging. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.6,0,0
-PROD-0104,OnePlus 12 (Platinum Silver),Powerful performance with Hasselblad camera and ultra-fast charging. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,3.8,0,0
-PROD-0105,Xiaomi 14 Ultra (Midnight Black),Pro-grade photography with Leica optics and large sensor. This Midnight Black edition offers a premium look and feel. Trending for 2024.,Mobile,4.3,1,0
-PROD-0106,Xiaomi 14 Ultra (Pure White),Pro-grade photography with Leica optics and large sensor. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.4,0,0
-PROD-0107,Xiaomi 14 Ultra (Ocean Blue),Pro-grade photography with Leica optics and large sensor. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Mobile,4.9,0,1
-PROD-0108,Xiaomi 14 Ultra (Space Gray),Pro-grade photography with Leica optics and large sensor. This Space Gray edition offers a premium look and feel. Trending for 2024.,Mobile,4.7,0,0
-PROD-0109,Xiaomi 14 Ultra (Platinum Silver),Pro-grade photography with Leica optics and large sensor. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,4.1,1,0
-PROD-0110,Sony Xperia 1 V (Midnight Black),Professional video and audio focus with 4K OLED. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Mobile,3.8,0,0
-PROD-0111,Sony Xperia 1 V (Pure White),Professional video and audio focus with 4K OLED. This Pure White edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,4.9,1,0
-PROD-0112,Sony Xperia 1 V (Ocean Blue),Professional video and audio focus with 4K OLED. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Mobile,4.4,1,0
-PROD-0113,Sony Xperia 1 V (Space Gray),Professional video and audio focus with 4K OLED. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.3,0,0
-PROD-0114,Sony Xperia 1 V (Platinum Silver),Professional video and audio focus with 4K OLED. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,4.2,0,0
-PROD-0115,iPhone 14 Plus (Midnight Black),Big screen performance and exceptional battery life. This Midnight Black edition offers a premium look and feel. Editor's Choice for 2024.,Mobile,3.9,0,1
-PROD-0116,iPhone 14 Plus (Pure White),Big screen performance and exceptional battery life. This Pure White edition offers a premium look and feel. Trending for 2024.,Mobile,3.9,0,1
-PROD-0117,iPhone 14 Plus (Ocean Blue),Big screen performance and exceptional battery life. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Mobile,4.4,1,0
-PROD-0118,iPhone 14 Plus (Space Gray),Big screen performance and exceptional battery life. This Space Gray edition offers a premium look and feel. Trending for 2024.,Mobile,4.3,0,0
-PROD-0119,iPhone 14 Plus (Platinum Silver),Big screen performance and exceptional battery life. This Platinum Silver edition offers a premium look and feel. Trending for 2024.,Mobile,4.0,0,0
-PROD-0120,Apple Watch Ultra 2 (Midnight Black),The most rugged and capable Apple Watch for explorers. This Midnight Black edition offers a premium look and feel. Trending for 2024.,Accessories,4.3,0,0
-PROD-0121,Apple Watch Ultra 2 (Pure White),The most rugged and capable Apple Watch for explorers. This Pure White edition offers a premium look and feel. Trending for 2024.,Accessories,4.7,0,0
-PROD-0122,Apple Watch Ultra 2 (Ocean Blue),The most rugged and capable Apple Watch for explorers. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Accessories,4.0,0,0
-PROD-0123,Apple Watch Ultra 2 (Space Gray),The most rugged and capable Apple Watch for explorers. This Space Gray edition offers a premium look and feel. Trending for 2024.,Accessories,4.0,0,0
-PROD-0124,Apple Watch Ultra 2 (Platinum Silver),The most rugged and capable Apple Watch for explorers. This Platinum Silver edition offers a premium look and feel. Award Winning for 2024.,Accessories,4.5,1,0
-PROD-0125,Samsung Galaxy Watch 6 (Midnight Black),Sleek smartwatch with advanced health and sleep tracking. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Accessories,3.8,1,0
-PROD-0126,Samsung Galaxy Watch 6 (Pure White),Sleek smartwatch with advanced health and sleep tracking. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Accessories,4.1,0,0
-PROD-0127,Samsung Galaxy Watch 6 (Ocean Blue),Sleek smartwatch with advanced health and sleep tracking. This Ocean Blue edition offers a premium look and feel. Award Winning for 2024.,Accessories,4.7,0,0
-PROD-0128,Samsung Galaxy Watch 6 (Space Gray),Sleek smartwatch with advanced health and sleep tracking. This Space Gray edition offers a premium look and feel. Trending for 2024.,Accessories,4.7,0,0
-PROD-0129,Samsung Galaxy Watch 6 (Platinum Silver),Sleek smartwatch with advanced health and sleep tracking. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Accessories,4.4,0,0
-PROD-0130,Garmin Fenix 7 Pro (Midnight Black),Ultimate multisport GPS watch with solar charging. This Midnight Black edition offers a premium look and feel. Trending for 2024.,Accessories,4.3,1,0
-PROD-0131,Garmin Fenix 7 Pro (Pure White),Ultimate multisport GPS watch with solar charging. This Pure White edition offers a premium look and feel. Editor's Choice for 2024.,Accessories,3.9,0,0
-PROD-0132,Garmin Fenix 7 Pro (Ocean Blue),Ultimate multisport GPS watch with solar charging. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Accessories,4.8,0,0
-PROD-0133,Garmin Fenix 7 Pro (Space Gray),Ultimate multisport GPS watch with solar charging. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Accessories,4.3,0,0
-PROD-0134,Garmin Fenix 7 Pro (Platinum Silver),Ultimate multisport GPS watch with solar charging. This Platinum Silver edition offers a premium look and feel. Editor's Choice for 2024.,Accessories,4.4,0,0
-PROD-0135,DJI Mini 4 Pro (Midnight Black),Ultra-light drone with 4K HDR and obstacle sensing. This Midnight Black edition offers a premium look and feel. Award Winning for 2024.,Accessories,4.0,0,0
-PROD-0136,DJI Mini 4 Pro (Pure White),Ultra-light drone with 4K HDR and obstacle sensing. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Accessories,4.0,1,0
-PROD-0137,DJI Mini 4 Pro (Ocean Blue),Ultra-light drone with 4K HDR and obstacle sensing. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Accessories,4.7,1,0
-PROD-0138,DJI Mini 4 Pro (Space Gray),Ultra-light drone with 4K HDR and obstacle sensing. This Space Gray edition offers a premium look and feel. Award Winning for 2024.,Accessories,4.0,0,0
-PROD-0139,DJI Mini 4 Pro (Platinum Silver),Ultra-light drone with 4K HDR and obstacle sensing. This Platinum Silver edition offers a premium look and feel. Trending for 2024.,Accessories,4.3,0,0
-PROD-0140,GoPro HERO12 Black (Midnight Black),Rugged action camera with best-in-class stabilization. This Midnight Black edition offers a premium look and feel. Editor's Choice for 2024.,Accessories,4.3,0,0
-PROD-0141,GoPro HERO12 Black (Pure White),Rugged action camera with best-in-class stabilization. This Pure White edition offers a premium look and feel. Award Winning for 2024.,Accessories,5.0,0,0
-PROD-0142,GoPro HERO12 Black (Ocean Blue),Rugged action camera with best-in-class stabilization. This Ocean Blue edition offers a premium look and feel. Trending for 2024.,Accessories,4.6,0,0
-PROD-0143,GoPro HERO12 Black (Space Gray),Rugged action camera with best-in-class stabilization. This Space Gray edition offers a premium look and feel. Editor's Choice for 2024.,Accessories,3.8,0,0
-PROD-0144,GoPro HERO12 Black (Platinum Silver),Rugged action camera with best-in-class stabilization. This Platinum Silver edition offers a premium look and feel. Trending for 2024.,Accessories,4.2,1,0
+uniq_id,product_name,product_description,category,rating,is_trending,is_best_seller,search_term
+PROD-101,Moto G Power 2024,Affordable budget phone with incredible battery life and a large 120Hz display.,Mobile,4.5,1,0,Moto G Power smartphone
+PROD-102,Samsung Galaxy A15,Budget-friendly smartphone with an awesome AMOLED screen and long-lasting battery.,Mobile,4.3,0,1,Samsung Galaxy A15 smartphone
+PROD-103,OnePlus Nord N300,Fast charging budget phone with smooth performance and 5G connectivity.,Mobile,4.2,0,0,OnePlus Nord N300 5G smartphone
+PROD-104,Google Pixel 6a,Affordable Google phone featuring an excellent camera and pure Android experience.,Mobile,4.6,1,1,Google Pixel 6a smartphone
+PROD-105,Nokia G400 5G,Sturdy and reliable budget phone with multi-day battery.,Mobile,4.0,0,0,Nokia G400 smartphone
+PROD-106,Xiaomi Redmi Note 13,Impressive budget phone with sharp 108MP camera.,Mobile,4.4,1,0,Xiaomi Redmi Note 13 smartphone
+PROD-107,Samsung Galaxy A03s,Entry-level budget smartphone that covers all the basics reliably.,Mobile,4.1,0,1,Samsung Galaxy A03s smartphone
+PROD-108,TCL 40XL,Large affordable budget phone focusing on media consumption.,Mobile,4.2,0,0,TCL 40XL smartphone
+PROD-109,Moto G Play,Incredibly cheap budget phone doing the essentials correctly.,Mobile,4.0,0,0,Moto G Play smartphone
+PROD-110,Poco M6 Pro,Value-driven budget phone offering high refresh rates.,Mobile,4.5,1,0,Poco M6 Pro smartphone
+PROD-111,Infinix Note 30,Stylish budget phone packing surprisingly good internals.,Mobile,4.2,0,0,Infinix Note 30 smartphone
+PROD-112,Realme C55,Excellent cheap budget smartphone with quick charging capabilities.,Mobile,4.3,0,0,Realme C55 smartphone
+PROD-113,Honor X8a,Thin budget phone with a stunning edgeless display and 100MP camera.,Mobile,4.4,0,0,Honor X8a smartphone
+PROD-114,Nokia C21 Plus,Very low-cost budget phone targeted at absolute entry-level buyers.,Mobile,3.9,0,0,Nokia C21 Plus smartphone
+PROD-115,Samsung Galaxy M14,Massive battery budget phone aimed at endless social media browsing.,Mobile,4.4,0,1,Samsung Galaxy M14 smartphone
+PROD-201,iPhone 15 Pro Max,Ultimate flagship smartphone with Titanium design and A17 Pro chip.,Mobile,4.9,0,1,iPhone 15 Pro Max smartphone
+PROD-202,Samsung Galaxy S24 Ultra,Powerhouse flagship with Galaxy AI and integrated S Pen.,Mobile,4.8,1,0,Samsung Galaxy S24 Ultra smartphone
+PROD-203,Google Pixel 8 Pro,Advanced AI-powered camera phone with helpful Google experiences.,Mobile,4.7,1,0,Google Pixel 8 Pro smartphone
+PROD-204,OnePlus 12,High-performance smartphone with Hasselblad camera and super fast charging.,Mobile,4.6,0,0,OnePlus 12 smartphone
+PROD-205,Xiaomi 14 Ultra,Photography-focused flagship with Leica optics and a massive sensor.,Mobile,4.5,0,0,Xiaomi 14 Ultra smartphone
+PROD-206,Sony Xperia 1 V,Professional creator premium smartphone boasting insane low-light performance.,Mobile,4.3,0,0,Sony Xperia 1 V smartphone
+PROD-207,Samsung Galaxy Z Fold 5,Premium folding phone transforming into a productivity tablet.,Mobile,4.7,1,1,Samsung Galaxy Z Fold 5 smartphone
+PROD-208,Motorola Edge+ 2023,Flagship from Motorola emphasizing sleekness and pure rapid performance.,Mobile,4.4,0,0,Motorola Edge+ smartphone
+PROD-209,iPhone 15,The new standard premium phone inheriting the dynamic island.,Mobile,4.8,0,1,iPhone 15 smartphone
+PROD-210,Asus ROG Phone 8 Pro,The ultimate premium smartphone engineered for high-end mobile gamers.,Mobile,4.7,1,0,Asus ROG Phone 8 Pro smartphone
+PROD-301,Razer BlackWidow V3 Gaming Keyboard,Mechanical gaming keyboard with RGB backlighting and tactile green switches.,Computing,4.7,1,1,Razer BlackWidow V3 gaming keyboard
+PROD-302,Corsair K70 RGB Pro Gaming Keyboard,Premium aluminum mechanical gaming keyboard with Cherry MX switches.,Computing,4.8,0,1,Corsair K70 RGB Pro gaming keyboard
+PROD-303,SteelSeries Apex Pro TKL Gaming Keyboard,Tenkeyless esports keyboard with adjustable OmniPoint switches.,Computing,4.9,1,0,SteelSeries Apex Pro TKL gaming keyboard
+PROD-304,Logitech G Pro X Gaming Keyboard,Compact mechanical keyboard designed with pro gamers in mind.,Computing,4.6,0,0,Logitech G Pro X gaming keyboard
+PROD-305,HyperX Alloy Origins Gaming Keyboard,Durable mechanical keyboard with custom HyperX switches and brilliant RGB.,Computing,4.7,0,0,HyperX Alloy Origins gaming keyboard
+PROD-306,Roccat Vulcan II Max Gaming Keyboard,Incredibly gorgeous visual gaming keyboard featuring dual LED switches.,Computing,4.5,1,0,Roccat Vulcan II Max gaming keyboard
+PROD-307,Keychron Q1 Pro Custom Gaming Keyboard,A heavy enthusiast-grade wireless aluminum mechanical gaming keyboard.,Computing,4.8,0,0,Keychron Q1 Pro gaming keyboard
+PROD-308,Wooting 60HE Gaming Keyboard,Analog esports gaming keyboard offering absolute competitive advantages.,Computing,4.9,1,1,Wooting 60HE gaming keyboard
+PROD-309,Razer Huntsman V3 Pro Gaming Keyboard,Rapid trigger gaming keyboard focusing on absolute speed.,Computing,4.7,0,0,Razer Huntsman V3 Pro gaming keyboard
+PROD-310,Asus ROG Azoth Gaming Keyboard,Gasket-mount 75% custom gaming keyboard with an OLED panel.,Computing,4.8,1,0,Asus ROG Azoth gaming keyboard
+PROD-401,Sony WH-1000XM5 Wireless Headphones,Industry-leading noise canceling over-ear headphones with auto NC optimizer.,Audio,4.8,1,1,Sony WH-1000XM5 wireless headphones
+PROD-402,Bose QuietComfort Ultra Headphones,World-class noise cancellation headphones for pure concentration and deep bass.,Audio,4.7,0,1,Bose QuietComfort Ultra headphones
+PROD-403,Apple AirPods Max,The pinnacle of over-ear headphones with high-fidelity audio and spatial sound.,Audio,4.6,1,0,Apple AirPods Max headphones
+PROD-404,Sennheiser Momentum 4 Headphones,Premium sound quality wireless over-ear headphones with a 60-hour battery life.,Audio,4.5,0,0,Sennheiser Momentum 4 headphones
+PROD-405,Skullcandy Crusher Evo Headphones,Bass-heavy sensory wireless headphones with personal sound profiling.,Audio,4.4,0,0,Skullcandy Crusher Evo headphones
+PROD-406,Beats Studio Pro Headphones,Iconic over-ear wireless headphones focusing on Apple system integration.,Audio,4.5,0,1,Beats Studio Pro headphones
+PROD-407,Focal Bathys Wireless Headphones,Audiophile-grade wireless Bluetooth headphones redefining luxury listening.,Audio,4.9,0,0,Focal Bathys headphones
+PROD-408,Bowers & Wilkins Px8 Headphones,Extremely luxurious over-ear headphones made with die-cast aluminum.,Audio,4.8,0,0,Bowers & Wilkins Px8 headphones
+PROD-409,JBL Tour One M2 Headphones,Excellent adaptive noise cancellation headphones with superb microphone quality.,Audio,4.6,1,0,JBL Tour One M2 headphones
+PROD-410,Anker Soundcore Space Q45 Headphones,Amazing value active noise cancelling headphones with incredibly long battery life.,Audio,4.7,1,1,Anker Soundcore Space Q45 headphones
+PROD-501,Apple AirPods Pro (2nd Gen),Premium active noise cancelling true wireless earbuds with immersive spatial audio.,Audio,4.8,0,1,Apple AirPods Pro earbuds
+PROD-502,Sony WF-1000XM5 Earbuds,Truly wireless noise cancelling earbuds with sleek design and rich sound.,Audio,4.7,1,0,Sony WF-1000XM5 earbuds
+PROD-503,Samsung Galaxy Buds2 Pro,True wireless Bluetooth earbuds with intelligent active noise cancellation.,Audio,4.6,0,1,Samsung Galaxy Buds2 Pro earbuds
+PROD-504,Bose QuietComfort Earbuds II,Personalized noise cancellation earbuds with lifelike sound.,Audio,4.6,0,0,Bose QuietComfort Earbuds II
+PROD-505,Jabra Elite 8 Active Earbuds,Ultra-durable active earbuds designed for intense workouts and secure fit.,Audio,4.5,0,0,Jabra Elite 8 Active earbuds
+PROD-506,Beats Fit Pro Earbuds,Secure-fit wireless earbuds tailored for active athletes.,Audio,4.6,0,1,Beats Fit Pro earbuds
+PROD-507,Sennheiser Momentum True Wireless 3,Incredible sound quality earbuds meant for uncompromising audio lovers.,Audio,4.7,0,0,Sennheiser Momentum 3 earbuds
+PROD-508,Nothing Ear 2 Buds,Transparent aesthetic earbuds offering a truly personalized sound engine.,Audio,4.5,1,0,Nothing Ear 2 earbuds
+PROD-509,Google Pixel Buds Pro,Seamlessly integrated Google earbuds featuring spatial audio.,Audio,4.5,0,0,Google Pixel Buds Pro earbuds
+PROD-510,Anker Soundcore Liberty 4 Earbuds,In-ear heartbeat monitoring earbuds with crisp spatial clarity.,Audio,4.6,1,1,Anker Soundcore Liberty 4 earbuds
+PROD-701,Logitech MX Master 3S Wireless Mouse,Performance wireless office mouse with silent clicks and MagSpeed scrolling.,Computing,4.9,0,1,Logitech MX Master 3S wireless mouse
+PROD-702,Apple Magic Keyboard,Sleek wireless office keyboard with rechargeable battery for Mac.,Computing,4.8,0,0,Apple Magic keyboard
+PROD-703,Lenovo ThinkPad X1 Carbon,Legendary business laptop with ultra-light carbon fiber chassis and long battery.,Computing,4.7,0,0,Lenovo ThinkPad laptop
+PROD-704,Dell XPS 15 Laptop,Premium Windows business laptop with InfinityEdge display.,Computing,4.8,1,0,Dell XPS 15 laptop
+PROD-705,MacBook Pro 14 M3,Extreme performance for professionals with Liquid Retina.,Computing,4.9,1,1,MacBook Pro 14 laptop
+PROD-706,Microsoft Surface Laptop 5,"Elegant, super-light touchscreen office laptop meant for quick mobility.",Computing,4.5,0,0,Microsoft Surface Laptop 5
+PROD-707,Logitech MX Keys S Keyboard,Quietly precise wireless illuminated office keyboard engineered for coders.,Computing,4.8,0,1,Logitech MX Keys S Keyboard
+PROD-708,LG UltraFine 4K Display,Crisp 4K office monitor designed for creative professionals.,Computing,4.6,0,0,LG UltraFine 4K monitor
+PROD-709,HP Spectre x360 Laptop,Stunning 2-in-1 office laptop with a precision touch screen.,Computing,4.7,1,0,HP Spectre x360 laptop
+PROD-710,Apple Studio Display,Immersive 27-inch 5K Retina office monitor featuring center stage camera.,Computing,4.8,0,0,Apple Studio Display monitor
+PROD-801,Samsung Galaxy Watch 6,Sleek smartwatch with advanced health monitoring and sleep tracking.,Accessories,4.6,1,0,Samsung Galaxy Watch 6 smartwatch
+PROD-802,Apple Watch Series 9,Advanced health sensors and a brighter smartwatch display.,Accessories,4.8,1,1,Apple Watch Series 9 smartwatch
+PROD-803,Garmin Fenix 7 Pro,Ultimate multisport GPS smartwatch with solar charging.,Accessories,4.7,0,0,Garmin Fenix 7 Pro smartwatch
+PROD-804,Google Pixel Watch 2,Helpful Google smartwatch experiences right on your wrist.,Accessories,4.5,0,0,Google Pixel Watch 2 smartwatch
+PROD-805,Fitbit Charge 6,Advanced fitness tracker and smartwatch with Google apps.,Accessories,4.4,0,1,Fitbit Charge 6 smartwatch
+PROD-806,Amazfit GTR 4,Affordable fitness smartwatch carrying a ridiculously vast battery tank.,Accessories,4.5,1,0,Amazfit GTR 4 smartwatch
+PROD-807,Apple Watch Ultra 2,The most rugged extreme sports smartwatch Apple has ever launched.,Accessories,4.9,1,0,Apple Watch Ultra 2 smartwatch
+PROD-808,Garmin Venu 3,Lifestyle-focused GPS smartwatch built to help achieve health goals.,Accessories,4.6,0,0,Garmin Venu 3 smartwatch
+PROD-809,OnePlus Watch 2,Dual-engine architecture smartwatch providing incredible performance and battery.,Accessories,4.4,0,0,OnePlus Watch 2 smartwatch
+PROD-810,Mobvoi TicWatch Pro 5,WearOS smartwatch housing dual-display technology for unmatched endurance.,Accessories,4.3,0,0,Mobvoi TicWatch Pro 5 smartwatch

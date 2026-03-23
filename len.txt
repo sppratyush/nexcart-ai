@@ -1,0 +1,2 @@
+Rows: 36
+Columns: ['uniq_id', 'product_name', 'product_description', 'category', 'rating', 'is_trending', 'is_best_seller', 'search_term', 'clean_desc', 'clean_name', 'combined']

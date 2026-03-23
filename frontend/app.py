@@ -24,9 +24,7 @@ load_css()
 # --- Sidebar ---
 with st.sidebar:
     st.markdown("### ⚙️ Search Settings")
-    
     top_k = st.slider("Number of Results", min_value=1, max_value=20, value=6)
-    
     st.markdown("#### Hybrid Search Focus")
     st.markdown("<small>Adjust the blend between exact keyword matching (BM25) and semantic vector search (SentenceTransformers).</small>", unsafe_allow_html=True)
     
@@ -100,7 +98,9 @@ if search_clicked or query:
                 
                 if response.status_code == 200:
                     data = response.json()
-                    results = data.get("results", [])
+                    all_results = data.get("results", [])
+                    # Filter out padding items with absolute match scores below 0.60
+                    results = [r for r in all_results if float(r.get('score', 0)) >= 0.60]
                     
                     st.markdown(f"<p style='color: #94a3b8; margin-top: 1rem;'>Found {len(results)} highly-relevant results in {ellapsed:.3f} seconds.</p>", unsafe_allow_html=True)
                     

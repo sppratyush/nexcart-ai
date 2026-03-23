@@ -176,15 +176,13 @@ class HybridRecommender:
             if idx != -1:
                 semantic_scores[idx] = distances[0][i]
             
-        if semantic_scores.max() > 0:
-            semantic_scores = semantic_scores / semantic_scores.max()
+        semantic_scores = np.clip(semantic_scores, 0.0, 1.0)
 
         # 2. Lexical
         tokenized_query = clean_query.split()
         bm25_scores = self.bm25.get_scores(tokenized_query)
         
-        if bm25_scores.max() > 0:
-            bm25_scores = bm25_scores / bm25_scores.max()
+        bm25_scores = np.clip(bm25_scores / 10.0, 0.0, 1.0)
 
         # 3. Hybrid Base Score
         hybrid_scores = (semantic_scores * semantic_weight) + (bm25_scores * (1.0 - semantic_weight))
@@ -206,9 +204,8 @@ class HybridRecommender:
             best_seller_boost = self.df['is_best_seller'].astype(float) * 0.1
             hybrid_scores += best_seller_boost.values
 
-        # Normalize final scores to [0, 1] for display
-        if hybrid_scores.max() > 0:
-            hybrid_scores = hybrid_scores / hybrid_scores.max()
+        # Normalize final scores to [0, 1] clipping
+        hybrid_scores = np.clip(hybrid_scores, 0.0, 1.0)
 
         # 5. Result Selection with De-duplication
         # Get more than enough to filter
@@ -227,8 +224,9 @@ class HybridRecommender:
                 
             seen_main_base_names.add(base_name)
             
-            amazon_url = f"https://www.amazon.com/s?k={urllib.parse.quote_plus(name)}"
-            flipkart_url = f"https://www.flipkart.com/search?q={urllib.parse.quote_plus(name)}"
+            search_query = str(row['search_term']) if 'search_term' in self.df.columns and pd.notna(row.get('search_term')) else base_name
+            amazon_url = f"https://www.amazon.com/s?k={urllib.parse.quote_plus(search_query)}"
+            flipkart_url = f"https://www.flipkart.com/search?q={urllib.parse.quote_plus(search_query)}"
             
             # Similar items (Semantic only)
             item_emb = self.model.encode([row['combined']], convert_to_numpy=True)
@@ -274,7 +272,7 @@ class HybridRecommender:
 # Singleton instance
 _recommender = None
 
-def get_recommender(data_path="data/raw/sample-data.csv"):
+def get_recommender(data_path="data/raw/amazon_electronics.csv"):
     global _recommender
     if _recommender is None:
         _recommender = HybridRecommender(data_path)
