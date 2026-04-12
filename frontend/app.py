@@ -47,27 +47,7 @@ with st.sidebar:
         help="1.0 = Pure Semantic Search, 0.0 = Pure Lexical Search"
     )
     
-    st.markdown("---")
-    st.markdown("### ⚡ Real-time Product Sync")
-    with st.expander("Add New Product to Index"):
-        new_name = st.text_input("Product Name")
-        new_desc = st.text_area("Description")
-        new_price = st.number_input("Price (₹)", min_value=0, value=1000)
-        if st.button("🚀 Index Product"):
-            if new_name and new_desc:
-                try:
-                    sync_resp = requests.post(
-                        f"{API_URL}/items",
-                        json={"name": new_name, "description": new_desc, "price": new_price}
-                    )
-                    if sync_resp.status_code == 200:
-                        st.success("Product indexed and searchable!")
-                    else:
-                        st.error(f"Sync failed: {sync_resp.text}")
-                except Exception as e:
-                    st.error(f"Error: {e}")
-            else:
-                st.warning("Name and Description required.")
+
 
     st.markdown("---")
     st.markdown("### 📊 Analytics Dashboard")
@@ -179,20 +159,26 @@ if search_clicked or query:
                                 if price_available:
                                     amazon_price = item1.get('amazon_price', 0)
                                     flipkart_price = item1.get('flipkart_price', 0)
-                                    price_label = "Estimated Price (Demo)" if price_source == "Demo Data" else "Live Price"
+                                    price_label = "System Base Price (Demo)" if price_source == "Demo Data" else "Live Price"
                                     price_str = f"₹{item1.get('price', 0):,.2f}<br><span style='font-size: 0.7rem; font-weight: normal; color: #64748b;'>{price_label}</span>"
 
-                                    amz_best = " (Best Price ✅)" if amazon_price <= flipkart_price and amazon_price > 0 else ""
-                                    flp_best = " (Best Price ✅)" if flipkart_price < amazon_price and flipkart_price > 0 else ""
+                                    if amazon_price > 0 and flipkart_price > 0:
+                                        amz_best = " (Best Price ✅)" if amazon_price <= flipkart_price else ""
+                                        flp_best = " (Best Price ✅)" if flipkart_price < amazon_price else ""
+                                        amz_text = f"🛒 Amazon: ₹{amazon_price:,.2f}{amz_best}"
+                                        flp_text = f"🛒 Flipkart: ₹{flipkart_price:,.2f}{flp_best}"
+                                    else:
+                                        amz_text = "🛒 Check Amazon Price"
+                                        flp_text = "🛒 Check Flipkart Price"
 
                                     button_html = f"""<div style="margin-top: 1rem; border-top: 1px dashed #cbd5e1; padding-top: 0.8rem;">
-<div style="font-size: 0.8rem; color: #64748b; margin-bottom: 5px;">Lowest price available at (Source: {price_source}):</div>
+<div style="font-size: 0.8rem; color: #64748b; margin-bottom: 5px;">Check exact prices via official links:</div>
 <div style="display: flex; gap: 10px;">
     <a href="{item1.get('amazon_url', '#')}" target="_blank" style="text-decoration: none; flex: 1;">
-        <button style="width: 100%; background: #f59e0b; color: #fff; border:none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">🛒 Amazon: ₹{amazon_price:,.2f}{amz_best}</button>
+        <button style="width: 100%; background: #f59e0b; color: #fff; border:none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">{amz_text}</button>
     </a>
     <a href="{item1.get('flipkart_url', '#')}" target="_blank" style="text-decoration: none; flex: 1;">
-        <button style="width: 100%; background: #3b82f6; color: #fff; border:none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">🛒 Flipkart: ₹{flipkart_price:,.2f}{flp_best}</button>
+        <button style="width: 100%; background: #3b82f6; color: #fff; border:none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">{flp_text}</button>
     </a>
 </div>
 </div>"""
@@ -245,20 +231,26 @@ if search_clicked or query:
                                     if price_available2:
                                         amazon_price2 = item2.get('amazon_price', 0)
                                         flipkart_price2 = item2.get('flipkart_price', 0)
-                                        price_label2 = "Estimated Price (Demo)" if price_source2 == "Demo Data" else "Live Price"
+                                        price_label2 = "System Base Price (Demo)" if price_source2 == "Demo Data" else "Live Price"
                                         price_str2 = f"₹{item2.get('price', 0):,.2f}<br><span style='font-size: 0.7rem; font-weight: normal; color: #64748b;'>{price_label2}</span>"
 
-                                        amz_best2 = " (Best Price ✅)" if amazon_price2 <= flipkart_price2 and amazon_price2 > 0 else ""
-                                        flp_best2 = " (Best Price ✅)" if flipkart_price2 < amazon_price2 and flipkart_price2 > 0 else ""
+                                        if amazon_price2 > 0 and flipkart_price2 > 0:
+                                            amz_best2 = " (Best Price ✅)" if amazon_price2 <= flipkart_price2 else ""
+                                            flp_best2 = " (Best Price ✅)" if flipkart_price2 < amazon_price2 else ""
+                                            amz_text2 = f"🛒 Amazon: ₹{amazon_price2:,.2f}{amz_best2}"
+                                            flp_text2 = f"🛒 Flipkart: ₹{flipkart_price2:,.2f}{flp_best2}"
+                                        else:
+                                            amz_text2 = "🛒 Check Amazon Price"
+                                            flp_text2 = "🛒 Check Flipkart Price"
 
                                         button_html2 = f"""<div style="margin-top: 1rem; border-top: 1px dashed #cbd5e1; padding-top: 0.8rem;">
-<div style="font-size: 0.8rem; color: #64748b; margin-bottom: 5px;">Lowest price available at (Source: {price_source2}):</div>
+<div style="font-size: 0.8rem; color: #64748b; margin-bottom: 5px;">Check exact prices via official links:</div>
 <div style="display: flex; gap: 10px;">
     <a href="{item2.get('amazon_url', '#')}" target="_blank" style="text-decoration: none; flex: 1;">
-        <button style="width: 100%; background: #f59e0b; color: #fff; border:none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">🛒 Amazon: ₹{amazon_price2:,.2f}{amz_best2}</button>
+        <button style="width: 100%; background: #f59e0b; color: #fff; border:none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">{amz_text2}</button>
     </a>
     <a href="{item2.get('flipkart_url', '#')}" target="_blank" style="text-decoration: none; flex: 1;">
-        <button style="width: 100%; background: #3b82f6; color: #fff; border:none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">🛒 Flipkart: ₹{flipkart_price2:,.2f}{flp_best2}</button>
+        <button style="width: 100%; background: #3b82f6; color: #fff; border:none; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">{flp_text2}</button>
     </a>
 </div>
 </div>"""

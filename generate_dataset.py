@@ -1,100 +1,53 @@
 import csv
+import os
 
 products = [
-    # Budget Phones
-    ("PROD-101", "Moto G Power 2024", "Affordable budget phone with incredible battery life and a large 120Hz display.", "Mobile", 4.5, 1, 0, "Moto G Power smartphone", 16999),
-    ("PROD-102", "Samsung Galaxy A15", "Budget-friendly smartphone with an awesome AMOLED screen and long-lasting battery.", "Mobile", 4.3, 0, 1, "Samsung Galaxy A15 smartphone", 19999),
-    ("PROD-103", "OnePlus Nord N300", "Fast charging budget phone with smooth performance and 5G connectivity.", "Mobile", 4.2, 0, 0, "OnePlus Nord N300 5G smartphone", 17500),
-    ("PROD-104", "Google Pixel 6a", "Affordable Google phone featuring an excellent camera and pure Android experience.", "Mobile", 4.6, 1, 1, "Google Pixel 6a smartphone", 24999),
-    ("PROD-105", "Nokia G400 5G", "Sturdy and reliable budget phone with multi-day battery.", "Mobile", 4.0, 0, 0, "Nokia G400 smartphone", 14500),
-    ("PROD-106", "Xiaomi Redmi Note 13", "Impressive budget phone with sharp 108MP camera.", "Mobile", 4.4, 1, 0, "Xiaomi Redmi Note 13 smartphone", 18999),
-    ("PROD-107", "Samsung Galaxy A03s", "Entry-level budget smartphone that covers all the basics reliably.", "Mobile", 4.1, 0, 1, "Samsung Galaxy A03s smartphone", 11999),
-    ("PROD-108", "TCL 40XL", "Large affordable budget phone focusing on media consumption.", "Mobile", 4.2, 0, 0, "TCL 40XL smartphone", 13499),
-    ("PROD-109", "Moto G Play", "Incredibly cheap budget phone doing the essentials correctly.", "Mobile", 4.0, 0, 0, "Moto G Play smartphone", 9999),
-    ("PROD-110", "Poco M6 Pro", "Value-driven budget phone offering high refresh rates.", "Mobile", 4.5, 1, 0, "Poco M6 Pro smartphone", 15999),
-    ("PROD-111", "Infinix Note 30", "Stylish budget phone packing surprisingly good internals.", "Mobile", 4.2, 0, 0, "Infinix Note 30 smartphone", 14999),
-    ("PROD-112", "Realme C55", "Excellent cheap budget smartphone with quick charging capabilities.", "Mobile", 4.3, 0, 0, "Realme C55 smartphone", 13999),
-    ("PROD-113", "Honor X8a", "Thin budget phone with a stunning edgeless display and 100MP camera.", "Mobile", 4.4, 0, 0, "Honor X8a smartphone", 16500),
-    ("PROD-114", "Nokia C21 Plus", "Very low-cost budget phone targeted at absolute entry-level buyers.", "Mobile", 3.9, 0, 0, "Nokia C21 Plus smartphone", 8999),
-    ("PROD-115", "Samsung Galaxy M14", "Massive battery budget phone aimed at endless social media browsing.", "Mobile", 4.4, 0, 1, "Samsung Galaxy M14 smartphone", 14499),
-    
-    # Premium Phones
-    ("PROD-201", "iPhone 15 Pro Max", "Ultimate flagship smartphone with Titanium design and A17 Pro chip.", "Mobile", 4.9, 0, 1, "iPhone 15 Pro Max smartphone", 159900),
-    ("PROD-202", "Samsung Galaxy S24 Ultra", "Powerhouse flagship with Galaxy AI and integrated S Pen.", "Mobile", 4.8, 1, 0, "Samsung Galaxy S24 Ultra smartphone", 129999),
-    ("PROD-203", "Google Pixel 8 Pro", "Advanced AI-powered camera phone with helpful Google experiences.", "Mobile", 4.7, 1, 0, "Google Pixel 8 Pro smartphone", 106999),
-    ("PROD-204", "OnePlus 12", "High-performance smartphone with Hasselblad camera and super fast charging.", "Mobile", 4.6, 0, 0, "OnePlus 12 smartphone", 64999),
-    ("PROD-205", "Xiaomi 14 Ultra", "Photography-focused flagship with Leica optics and a massive sensor.", "Mobile", 4.5, 0, 0, "Xiaomi 14 Ultra smartphone", 99999),
-    ("PROD-206", "Sony Xperia 1 V", "Professional creator premium smartphone boasting insane low-light performance.", "Mobile", 4.3, 0, 0, "Sony Xperia 1 V smartphone", 119990),
-    ("PROD-207", "Samsung Galaxy Z Fold 5", "Premium folding phone transforming into a productivity tablet.", "Mobile", 4.7, 1, 1, "Samsung Galaxy Z Fold 5 smartphone", 154999),
-    ("PROD-208", "Motorola Edge+ 2023", "Flagship from Motorola emphasizing sleekness and pure rapid performance.", "Mobile", 4.4, 0, 0, "Motorola Edge+ smartphone", 74999),
-    ("PROD-209", "iPhone 15", "The new standard premium phone inheriting the dynamic island.", "Mobile", 4.8, 0, 1, "iPhone 15 smartphone", 79900),
-    ("PROD-210", "Asus ROG Phone 8 Pro", "The ultimate premium smartphone engineered for high-end mobile gamers.", "Mobile", 4.7, 1, 0, "Asus ROG Phone 8 Pro smartphone", 94999),
+    # ---- PANTS ----
+    ("PANT-001", "Slim Fit Premium Denim", "Dark wash stretch denim jeans featuring a slim taper fit and reinforced stitching for durability.", "Pants", 4.6, 1, 1, "mens slim fit dark wash denim jeans", 4999),
+    ("PANT-002", "Classic Khaki Chinos", "Versatile flat-front chino pants made from breathable cotton twill, perfect for business casual.", "Pants", 4.4, 0, 1, "mens khaki chino pants business casual", 3599),
+    ("PANT-003", "Tech Cargo Trousers", "Water-resistant cargo pants with multiple hidden zipper pockets and an articulating knee design.", "Pants", 4.7, 1, 0, "techwear water resistant cargo pants men", 5999),
+    ("PANT-004", "Relaxed Fit Lounge Joggers", "Ultra-soft fleece joggers with an elastic drawstring waist for ultimate weekend comfort.", "Pants", 4.8, 0, 1, "mens soft fleece lounge joggers sweatpants", 2599),
+    ("PANT-005", "Tailored Wool Trousers", "Elegant high-waisted wool blend trousers, tailored for a sharp, formal silhouette.", "Pants", 4.5, 0, 0, "mens formal wool blend dress trousers", 7999),
+    ("PANT-006", "Corduroy Straight Leg Pants", "Vintage-inspired thick corduroy pants available in earthy autumn tones.", "Pants", 4.3, 1, 0, "vintage straight leg corduroy pants", 4299),
+    ("PANT-007", "Lightweight Linen Drawstring", "Breezy summer linen pants with a relaxed wide leg and comfortable drawstring closure.", "Pants", 4.5, 0, 0, "mens summer lightweight linen pants", 3899),
+    ("PANT-008", "Athletic Track Pants", "Performance track pants with moisture-wicking fabric and side snap buttons.", "Pants", 4.2, 0, 0, "performance athletic sports track pants", 2999),
+    ("PANT-009", "Distressed Vintage Jeans", "Light blue extensively distressed denim jeans for a rugged, lived-in aesthetic.", "Pants", 4.4, 1, 0, "distressed ripped light blue denim jeans", 5499),
+    ("PANT-010", "Utility Workwear Pants", "Heavy-duty canvas double-knee work pants built to withstand tough environments.", "Pants", 4.8, 0, 1, "heavy duty canvas workwear pants double knee", 6500),
 
-    # Gaming Keyboards
-    ("PROD-301", "Razer BlackWidow V3 Gaming Keyboard", "Mechanical gaming keyboard with RGB backlighting and tactile green switches.", "Computing", 4.7, 1, 1, "Razer BlackWidow V3 gaming keyboard", 11999),
-    ("PROD-302", "Corsair K70 RGB Pro Gaming Keyboard", "Premium aluminum mechanical gaming keyboard with Cherry MX switches.", "Computing", 4.8, 0, 1, "Corsair K70 RGB Pro gaming keyboard", 14599),
-    ("PROD-303", "SteelSeries Apex Pro TKL Gaming Keyboard", "Tenkeyless esports keyboard with adjustable OmniPoint switches.", "Computing", 4.9, 1, 0, "SteelSeries Apex Pro TKL gaming keyboard", 18999),
-    ("PROD-304", "Logitech G Pro X Gaming Keyboard", "Compact mechanical keyboard designed with pro gamers in mind.", "Computing", 4.6, 0, 0, "Logitech G Pro X gaming keyboard", 12499),
-    ("PROD-305", "HyperX Alloy Origins Gaming Keyboard", "Durable mechanical keyboard with custom HyperX switches and brilliant RGB.", "Computing", 4.7, 0, 0, "HyperX Alloy Origins gaming keyboard", 8999),
-    ("PROD-306", "Roccat Vulcan II Max Gaming Keyboard", "Incredibly gorgeous visual gaming keyboard featuring dual LED switches.", "Computing", 4.5, 1, 0, "Roccat Vulcan II Max gaming keyboard", 16999),
-    ("PROD-307", "Keychron Q1 Pro Custom Gaming Keyboard", "A heavy enthusiast-grade wireless aluminum mechanical gaming keyboard.", "Computing", 4.8, 0, 0, "Keychron Q1 Pro gaming keyboard", 15499),
-    ("PROD-308", "Wooting 60HE Gaming Keyboard", "Analog esports gaming keyboard offering absolute competitive advantages.", "Computing", 4.9, 1, 1, "Wooting 60HE gaming keyboard", 21000),
-    ("PROD-309", "Razer Huntsman V3 Pro Gaming Keyboard", "Rapid trigger gaming keyboard focusing on absolute speed.", "Computing", 4.7, 0, 0, "Razer Huntsman V3 Pro gaming keyboard", 19999),
-    ("PROD-310", "Asus ROG Azoth Gaming Keyboard", "Gasket-mount 75% custom gaming keyboard with an OLED panel.", "Computing", 4.8, 1, 0, "Asus ROG Azoth gaming keyboard", 24999),
+    # ---- SHIRTS ----
+    ("SHRT-001", "Crisp White Oxford", "Essential classic white Oxford button-down shirt, featuring a tailored fit and premium cotton.", "Shirts", 4.7, 0, 1, "mens classic white oxford button down shirt", 2999),
+    ("SHRT-002", "Casual Flannel Overshirt", "Heavyweight plaid flannel shirt meant to be layered over tees for autumn weather.", "Shirts", 4.8, 1, 1, "heavyweight plaid flannel overshirt layering", 3499),
+    ("SHRT-003", "Performance Pique Polo", "Moisture-wicking athletic polo shirt ideal for golf or active office environments.", "Shirts", 4.5, 0, 0, "performance moisture wicking golf polo shirt", 2499),
+    ("SHRT-004", "Silk Camp Collar Shirt", "Luxurious silk-blend short sleeve shirt with an open camp collar and a subtle geometric pattern.", "Shirts", 4.6, 1, 0, "luxury silk short sleeve camp collar shirt", 5999),
+    ("SHRT-005", "Heavyweight Cotton T-Shirt", "Premium heavyweight structured t-shirt that holds its shape wash after wash.", "Shirts", 4.9, 0, 1, "premium heavyweight structured cotton t shirt", 1299),
+    ("SHRT-006", "Linen Button-Up", "Breathable, lightly textured pure linen shirt perfect for beach vacations.", "Shirts", 4.4, 0, 0, "pure breathable linen beach button up shirt", 3299),
+    ("SHRT-007", "Denim Western Shirt", "Rugged denim shirt with pearl snap buttons and traditional western yoke detailing.", "Shirts", 4.7, 1, 0, "rugged denim western snap button shirt", 4599),
+    ("SHRT-008", "Floral Hawaiian Shirt", "Vibrant tropical floral print short sleeve shirt made from lightweight viscose rayon.", "Shirts", 4.3, 0, 0, "tropical floral print hawaiian rayon shirt", 2799),
+    ("SHRT-009", "Merino Wool Sweater Shirt", "A unique hybrid long-sleeve knit shirt made from temperature-regulating merino wool.", "Shirts", 4.8, 0, 0, "temperature regulating merino wool knit shirt", 6599),
+    ("SHRT-010", "Striped Breton Top", "Classic French-inspired long sleeve boat neck shirt featuring navy and white horizontal stripes.", "Shirts", 4.5, 0, 0, "classic french horizontal striped breton shirt", 2199),
 
-    # Headphones (Over-Ear)
-    ("PROD-401", "Sony WH-1000XM5 Wireless Headphones", "Industry-leading noise canceling over-ear headphones with auto NC optimizer.", "Audio", 4.8, 1, 1, "Sony WH-1000XM5 wireless headphones", 29990),
-    ("PROD-402", "Bose QuietComfort Ultra Headphones", "World-class noise cancellation headphones for pure concentration and deep bass.", "Audio", 4.7, 0, 1, "Bose QuietComfort Ultra headphones", 35900),
-    ("PROD-403", "Apple AirPods Max", "The pinnacle of over-ear headphones with high-fidelity audio and spatial sound.", "Audio", 4.6, 1, 0, "Apple AirPods Max headphones", 54900),
-    ("PROD-404", "Sennheiser Momentum 4 Headphones", "Premium sound quality wireless over-ear headphones with a 60-hour battery life.", "Audio", 4.5, 0, 0, "Sennheiser Momentum 4 headphones", 26990),
-    ("PROD-405", "Skullcandy Crusher Evo Headphones", "Bass-heavy sensory wireless headphones with personal sound profiling.", "Audio", 4.4, 0, 0, "Skullcandy Crusher Evo headphones", 14999),
-    ("PROD-406", "Beats Studio Pro Headphones", "Iconic over-ear wireless headphones focusing on Apple system integration.", "Audio", 4.5, 0, 1, "Beats Studio Pro headphones", 28990),
-    ("PROD-407", "Focal Bathys Wireless Headphones", "Audiophile-grade wireless Bluetooth headphones redefining luxury listening.", "Audio", 4.9, 0, 0, "Focal Bathys headphones", 69000),
-    ("PROD-408", "Bowers & Wilkins Px8 Headphones", "Extremely luxurious over-ear headphones made with die-cast aluminum.", "Audio", 4.8, 0, 0, "Bowers & Wilkins Px8 headphones", 62000),
-    ("PROD-409", "JBL Tour One M2 Headphones", "Excellent adaptive noise cancellation headphones with superb microphone quality.", "Audio", 4.6, 1, 0, "JBL Tour One M2 headphones", 19999),
-    ("PROD-410", "Anker Soundcore Space Q45 Headphones", "Amazing value active noise cancelling headphones with incredibly long battery life.", "Audio", 4.7, 1, 1, "Anker Soundcore Space Q45 headphones", 9999),
-
-    # Earbuds
-    ("PROD-501", "Apple AirPods Pro (2nd Gen)", "Premium active noise cancelling true wireless earbuds with immersive spatial audio.", "Audio", 4.8, 0, 1, "Apple AirPods Pro earbuds", 24900),
-    ("PROD-502", "Sony WF-1000XM5 Earbuds", "Truly wireless noise cancelling earbuds with sleek design and rich sound.", "Audio", 4.7, 1, 0, "Sony WF-1000XM5 earbuds", 24990),
-    ("PROD-503", "Samsung Galaxy Buds2 Pro", "True wireless Bluetooth earbuds with intelligent active noise cancellation.", "Audio", 4.6, 0, 1, "Samsung Galaxy Buds2 Pro earbuds", 16999),
-    ("PROD-504", "Bose QuietComfort Earbuds II", "Personalized noise cancellation earbuds with lifelike sound.", "Audio", 4.6, 0, 0, "Bose QuietComfort Earbuds II", 22900),
-    ("PROD-505", "Jabra Elite 8 Active Earbuds", "Ultra-durable active earbuds designed for intense workouts and secure fit.", "Audio", 4.5, 0, 0, "Jabra Elite 8 Active earbuds", 17999),
-    ("PROD-506", "Beats Fit Pro Earbuds", "Secure-fit wireless earbuds tailored for active athletes.", "Audio", 4.6, 0, 1, "Beats Fit Pro earbuds", 18990),
-    ("PROD-507", "Sennheiser Momentum True Wireless 3", "Incredible sound quality earbuds meant for uncompromising audio lovers.", "Audio", 4.7, 0, 0, "Sennheiser Momentum 3 earbuds", 21990),
-    ("PROD-508", "Nothing Ear 2 Buds", "Transparent aesthetic earbuds offering a truly personalized sound engine.", "Audio", 4.5, 1, 0, "Nothing Ear 2 earbuds", 12999),
-    ("PROD-509", "Google Pixel Buds Pro", "Seamlessly integrated Google earbuds featuring spatial audio.", "Audio", 4.5, 0, 0, "Google Pixel Buds Pro earbuds", 16990),
-    ("PROD-510", "Anker Soundcore Liberty 4 Earbuds", "In-ear heartbeat monitoring earbuds with crisp spatial clarity.", "Audio", 4.6, 1, 1, "Anker Soundcore Liberty 4 earbuds", 8999),
-
-    # Office / Computing
-    ("PROD-701", "Logitech MX Master 3S Wireless Mouse", "Performance wireless office mouse with silent clicks and MagSpeed scrolling.", "Computing", 4.9, 0, 1, "Logitech MX Master 3S wireless mouse", 9495),
-    ("PROD-702", "Apple Magic Keyboard", "Sleek wireless office keyboard with rechargeable battery for Mac.", "Computing", 4.8, 0, 0, "Apple Magic keyboard", 9500),
-    ("PROD-703", "Lenovo ThinkPad X1 Carbon", "Legendary business laptop with ultra-light carbon fiber chassis and long battery.", "Computing", 4.7, 0, 0, "Lenovo ThinkPad laptop", 135000),
-    ("PROD-704", "Dell XPS 15 Laptop", "Premium Windows business laptop with InfinityEdge display.", "Computing", 4.8, 1, 0, "Dell XPS 15 laptop", 145000),
-    ("PROD-705", "MacBook Pro 14 M3", "Extreme performance for professionals with Liquid Retina.", "Computing", 4.9, 1, 1, "MacBook Pro 14 laptop", 169900),
-    ("PROD-706", "Microsoft Surface Laptop 5", "Elegant, super-light touchscreen office laptop meant for quick mobility.", "Computing", 4.5, 0, 0, "Microsoft Surface Laptop 5", 98900),
-    ("PROD-707", "Logitech MX Keys S Keyboard", "Quietly precise wireless illuminated office keyboard engineered for coders.", "Computing", 4.8, 0, 1, "Logitech MX Keys S Keyboard", 11500),
-    ("PROD-708", "LG UltraFine 4K Display", "Crisp 4K office monitor designed for creative professionals.", "Computing", 4.6, 0, 0, "LG UltraFine 4K monitor", 45000),
-    ("PROD-709", "HP Spectre x360 Laptop", "Stunning 2-in-1 office laptop with a precision touch screen.", "Computing", 4.7, 1, 0, "HP Spectre x360 laptop", 125000),
-    ("PROD-710", "Apple Studio Display", "Immersive 27-inch 5K Retina office monitor featuring center stage camera.", "Computing", 4.8, 0, 0, "Apple Studio Display monitor", 159900),
-
-    # Smartwatches
-    ("PROD-801", "Samsung Galaxy Watch 6", "Sleek smartwatch with advanced health monitoring and sleep tracking.", "Accessories", 4.6, 1, 0, "Samsung Galaxy Watch 6 smartwatch", 24999),
-    ("PROD-802", "Apple Watch Series 9", "Advanced health sensors and a brighter smartwatch display.", "Accessories", 4.8, 1, 1, "Apple Watch Series 9 smartwatch", 41900),
-    ("PROD-803", "Garmin Fenix 7 Pro", "Ultimate multisport GPS smartwatch with solar charging.", "Accessories", 4.7, 0, 0, "Garmin Fenix 7 Pro smartwatch", 75990),
-    ("PROD-804", "Google Pixel Watch 2", "Helpful Google smartwatch experiences right on your wrist.", "Accessories", 4.5, 0, 0, "Google Pixel Watch 2 smartwatch", 34999),
-    ("PROD-805", "Fitbit Charge 6", "Advanced fitness tracker and smartwatch with Google apps.", "Accessories", 4.4, 0, 1, "Fitbit Charge 6 smartwatch", 14999),
-    ("PROD-806", "Amazfit GTR 4", "Affordable fitness smartwatch carrying a ridiculously vast battery tank.", "Accessories", 4.5, 1, 0, "Amazfit GTR 4 smartwatch", 15999),
-    ("PROD-807", "Apple Watch Ultra 2", "The most rugged extreme sports smartwatch Apple has ever launched.", "Accessories", 4.9, 1, 0, "Apple Watch Ultra 2 smartwatch", 89900),
-    ("PROD-808", "Garmin Venu 3", "Lifestyle-focused GPS smartwatch built to help achieve health goals.", "Accessories", 4.6, 0, 0, "Garmin Venu 3 smartwatch", 45990),
-    ("PROD-809", "OnePlus Watch 2", "Dual-engine architecture smartwatch providing incredible performance and battery.", "Accessories", 4.4, 0, 0, "OnePlus Watch 2 smartwatch", 24999),
-    ("PROD-810", "Mobvoi TicWatch Pro 5", "WearOS smartwatch housing dual-display technology for unmatched endurance.", "Accessories", 4.3, 0, 0, "Mobvoi TicWatch Pro 5 smartwatch", 32999)
+    # ---- HOME FURNITURE ----
+    ("FURN-001", "Mid-Century Modern Sofa", "Sleek velvet 3-seater sofa with tufted cushions and tapered wooden legs.", "Furniture", 4.7, 1, 1, "mid century modern velvet 3 seater sofa", 45000),
+    ("FURN-002", "Ergonomic Mesh Office Chair", "Premium office chair with adjustable lumbar support, 3D armrests, and a breathable mesh back.", "Furniture", 4.8, 0, 1, "premium ergonomic mesh office desk chair lumbar", 22000),
+    ("FURN-003", "Solid Walnut Coffee Table", "Minimalist low-profile coffee table crafted from beautiful solid walnut wood.", "Furniture", 4.6, 0, 0, "minimalist solid walnut wood low coffee table", 15000),
+    ("FURN-004", "Industrial Bookshelf", "Tall 5-tier shelving unit combining rustic reclaimed wood shelves with a black iron pipe frame.", "Furniture", 4.5, 0, 0, "industrial rustic wood black iron pipe bookshelf", 18500),
+    ("FURN-005", "Upholstered Platform Bed Frame", "Queen-size bed frame featuring a padded, tufted headboard and sturdy wooden slats.", "Furniture", 4.7, 1, 0, "queen size bed frame tufted upholstered headboard", 32000),
+    ("FURN-006", "Marble Top Dining Table", "Elegant circular dining table featuring a heavy genuine marble top and a brass pedestal base.", "Furniture", 4.9, 0, 0, "elegant circular genuine marble top dining table", 55000),
+    ("FURN-007", "Leather Accent Recliner", "Plush genuine leather recliner chair with push-back mechanism and ergonomic padding.", "Furniture", 4.6, 0, 0, "plush genuine leather push back recliner chair", 28000),
+    ("FURN-008", "Rattan Pattern TV Stand", "Boho-chic entertainment center console featuring woven rattan doors and hidden cable management.", "Furniture", 4.4, 1, 0, "boho rattan woven tv stand entertainment console", 21000),
+    ("FURN-009", "Minimalist Floating Nightstand", "Wall-mounted wooden bedside table with a seamlessly integrated drawer for a clean look.", "Furniture", 4.3, 0, 0, "minimalist wall mounted floating wooden nightstand", 4500),
+    ("FURN-010", "Velvet Ottoman Pouf", "Round, deeply tufted velvet footrest ottoman that doubles as extra seating.", "Furniture", 4.5, 0, 1, "round tufted velvet footrest ottoman pouf seat", 3500)
 ]
 
-with open("p:/product/product/data/raw/amazon_electronics.csv", "w", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f)
-    writer.writerow(["uniq_id", "product_name", "product_description", "category", "rating", "is_trending", "is_best_seller", "search_term", "price"])
-    for p in products:
-        writer.writerow(p)
+def main():
+    os.makedirs("p:/product/product/data/raw", exist_ok=True)
+    with open("p:/product/product/data/raw/catalog.csv", "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["uniq_id", "product_name", "product_description", "category", "rating", "is_trending", "is_best_seller", "search_term", "price"])
+        for p in products:
+            writer.writerow(p)
 
-print("Massive dataset generated successfully.")
+    print("Catalog dataset (Shirts, Pants, Furniture) generated successfully -> catalog.csv")
+
+if __name__ == "__main__":
+    main()

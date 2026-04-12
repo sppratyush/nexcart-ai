@@ -127,48 +127,6 @@ class HybridRecommender:
                 return False
         return False
 
-    def add_product(self, product: dict):
-        """
-        Real-time update: Add a single product to the engine
-        Expected keys: name, description, id (optional)
-        """
-        name = product.get('name', 'Unknown')
-        desc = product.get('description', '')
-        prod_id = product.get('id', str(len(self.df) + 1))
-        price = product.get('price', 0.0)
-        
-        # Clean and combine
-        clean_name = self.clean_text(name)
-        clean_desc = self.clean_text(desc)
-        combined = f"{clean_name} {clean_desc}"
-        
-        # 1. Update DataFrame
-        new_row = {
-            self.id_col: prod_id,
-            self.name_col: name,
-            self.desc_col: desc,
-            'clean_name': clean_name,
-            'clean_desc': clean_desc,
-            'combined': combined,
-            'price': float(price)
-        }
-        self.df = pd.concat([self.df, pd.DataFrame([new_row])], ignore_index=True)
-        
-        # 2. Update FAISS
-        emb = self.model.encode([combined], convert_to_numpy=True)
-        faiss.normalize_L2(emb)
-        self.faiss_index.add(emb)
-        
-        # 3. Update BM25
-        # BM25Okapi doesn't natively support easy updates, so we rebuild the corpus
-        # For real-time, we could keep a small buffer, but for now, we rebuild the BM25 index
-        # If it's too slow, we can optimize later.
-        tokenized_corpus = self.df['combined'].apply(lambda x: str(x).split()).tolist()
-        self.bm25 = BM25Okapi(tokenized_corpus)
-        
-        # 4. Save
-        self.save_indices()
-        return True
 
     def recommend(self, query: str, top_k: int = 5, semantic_weight: float = 0.7, min_price: float = None, max_price: float = None):
         clean_query = self.clean_text(query)
@@ -278,9 +236,10 @@ class HybridRecommender:
             price_source = "Demo Data"
 
             if price_available:
-                amazon_price = price
-                # Make Flipkart 2-5% cheaper randomly based on id length or just 5%
-                flipkart_price = round(price * 0.95, 2)
+                # We do not simulate fake prices anymore to avoid mismatched data.
+                # If we get a live API, we will populate these.
+                amazon_price = 0.0
+                flipkart_price = 0.0
             else:
                 amazon_price = 0.0
                 flipkart_price = 0.0
@@ -324,7 +283,7 @@ class HybridRecommender:
 # Singleton instance
 _recommender = None
 
-def get_recommender(data_path="data/raw/amazon_electronics.csv"):
+def get_recommender(data_path="data/raw/catalog.csv"):
     global _recommender
     if _recommender is None:
         _recommender = HybridRecommender(data_path)

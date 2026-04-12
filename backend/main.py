@@ -10,11 +10,7 @@ app = FastAPI(
     version="1.1.0"
 )
 
-class ItemAddRequest(BaseModel):
-    name: str
-    description: str
-    id: Optional[str] = None
-    price: float = 0.0
+
 
 class RecommendationRequest(BaseModel):
     query: str
@@ -51,7 +47,7 @@ class RecommendationResponse(BaseModel):
 
 @app.on_event("startup")
 async def startup_event():
-    data_path = os.getenv("DATA_PATH", "data/raw/amazon_electronics.csv")
+    data_path = os.getenv("DATA_PATH", "data/raw/catalog.csv")
     print(f"Initializing Recommender with {data_path}...")
     _ = get_recommender(data_path)
     print("SmartShop Engine Ready.")
@@ -102,16 +98,3 @@ def stats():
         "price_distribution": dist
     }
 
-@app.post("/items")
-def add_item(item: ItemAddRequest):
-    try:
-        recommender = get_recommender()
-        success = recommender.add_product({
-            "name": item.name,
-            "description": item.description,
-            "id": item.id,
-            "price": item.price
-        })
-        return {"status": "success", "message": f"Product '{item.name}' added and indexed."}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
