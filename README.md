@@ -1,6 +1,6 @@
-# 🚀 NexCart Product Recommendation System
+# 🚀 SmartShop Product Recommendation System
 
-Welcome to the **NexCart AI Product Discovery Engine**, a comprehensive rewrite of the product recommendation system, transforming it into an industrial-grade, scalable Machine Learning architecture!
+Welcome to the **SmartShop AI Product Discovery Engine**, a comprehensive rewrite of the product recommendation system, transforming it into an industrial-grade, scalable Machine Learning architecture!
 
 ## 🌟 What's New?
 We've completely overhauled the project to simulate a real-world tech-stack used by top e-commerce platforms. 

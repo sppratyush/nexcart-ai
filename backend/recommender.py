@@ -74,6 +74,11 @@ class HybridRecommender:
             self.id_col = 'id'
 
         self.df = self.df.fillna("")
+        if 'price' in self.df.columns:
+            self.df['price'] = pd.to_numeric(self.df['price'], errors='coerce').fillna(0.0)
+        else:
+            self.df['price'] = 0.0
+
         self.df['clean_desc'] = self.df[self.desc_col].apply(self.clean_text)
         self.df['clean_name'] = self.df[self.name_col].apply(self.clean_text)
         self.df['combined'] = self.df['clean_name'] + " " + self.df['clean_desc']
@@ -130,6 +135,7 @@ class HybridRecommender:
         name = product.get('name', 'Unknown')
         desc = product.get('description', '')
         prod_id = product.get('id', str(len(self.df) + 1))
+        price = product.get('price', 0.0)
         
         # Clean and combine
         clean_name = self.clean_text(name)
@@ -143,7 +149,8 @@ class HybridRecommender:
             self.desc_col: desc,
             'clean_name': clean_name,
             'clean_desc': clean_desc,
-            'combined': combined
+            'combined': combined,
+            'price': float(price)
         }
         self.df = pd.concat([self.df, pd.DataFrame([new_row])], ignore_index=True)
         
@@ -163,7 +170,7 @@ class HybridRecommender:
         self.save_indices()
         return True
 
-    def recommend(self, query: str, top_k: int = 5, semantic_weight: float = 0.7):
+    def recommend(self, query: str, top_k: int = 5, semantic_weight: float = 0.7, min_price: float = None, max_price: float = None):
         clean_query = self.clean_text(query)
         
         # 1. Semantic
@@ -207,9 +214,23 @@ class HybridRecommender:
         # Normalize final scores to [0, 1] clipping
         hybrid_scores = np.clip(hybrid_scores, 0.0, 1.0)
 
+        # Apply Hard Filtering for Price bounds
+        if min_price is not None or max_price is not None:
+             valid_indices = np.ones(len(self.df), dtype=bool)
+             if 'price' in self.df.columns:
+                 prices = self.df['price'].values
+                 if min_price is not None:
+                     valid_indices &= (prices >= min_price)
+                 if max_price is not None:
+                     valid_indices &= (prices <= max_price)
+             
+             # Zero out scores for invalid items
+             hybrid_scores[~valid_indices] = -1.0
+
         # 5. Result Selection with De-duplication
         # Get more than enough to filter
-        top_indices = np.argsort(hybrid_scores)[::-1][:top_k * 4]
+        top_indices = np.argsort(hybrid_scores)[::-1]
+        top_indices = [idx for idx in top_indices if hybrid_scores[idx] > 0][:top_k * 4]
         
         results = []
         seen_main_base_names = set()
@@ -251,12 +272,43 @@ class HybridRecommender:
                     })
                     seen_sim_base_names.add(sim_base_name)
             
+            # Pricing and Mock values
+            price = float(row.get('price', 0.0))
+            price_available = (price > 0)
+            price_source = "Demo Data"
+
+            if price_available:
+                amazon_price = price
+                # Make Flipkart 2-5% cheaper randomly based on id length or just 5%
+                flipkart_price = round(price * 0.95, 2)
+            else:
+                amazon_price = 0.0
+                flipkart_price = 0.0
+
+            # Tags Logic
+            tags = []
+            rating = float(row.get('rating', 0))
+            if rating >= 4.7:
+                 tags.append("Top Rated")
+            if price >= 80000:
+                 tags.append("Premium Choice")
+            if 0 < price <= 20000 and rating >= 4.0:
+                 tags.append("Best Budget")
+            if float(hybrid_scores[idx]) > 0.8 and price > 0 and price <= 30000:
+                 tags.append("Best Value")
+
             results.append({
                 "id": str(row[self.id_col]),
                 "name": name,
                 "description": row[self.desc_col],
+                "price": price,
+                "amazon_price": amazon_price,
+                "flipkart_price": flipkart_price,
+                "price_available": price_available,
+                "price_source": price_source,
+                "tags": tags,
                 "score": float(hybrid_scores[idx]),
-                "rating": float(row.get('rating', 0)),
+                "rating": rating,
                 "is_trending": bool(row.get('is_trending', False)),
                 "is_best_seller": bool(row.get('is_best_seller', False)),
                 "amazon_url": amazon_url,
