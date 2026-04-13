@@ -47,7 +47,21 @@ def main():
         for p in products:
             writer.writerow(p)
 
-    print("Catalog dataset (Shirts, Pants, Furniture) generated successfully -> catalog.csv")
+    print("Catalog dataset (Shirts, Pants, Furniture) generated.")
+
+    # Append Electronics from amazon_electronics.csv
+    electronics_path = "p:/product/product/data/raw/amazon_electronics.csv"
+    if os.path.exists(electronics_path):
+        with open(electronics_path, "r", encoding="utf-8") as rf:
+            reader = csv.reader(rf)
+            next(reader) # Skip original header
+            with open("p:/product/product/data/raw/catalog.csv", "a", newline="", encoding="utf-8") as af:
+                writer = csv.writer(af)
+                count = 0
+                for row in reader:
+                    writer.writerow(row)
+                    count += 1
+        print(f"Successfully appended {count} electronics products to catalog.csv")
 
 if __name__ == "__main__":
     main()
