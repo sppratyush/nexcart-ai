@@ -58,8 +58,8 @@ def health_check():
 
 @app.post("/recommend", response_model=RecommendationResponse)
 def recommend(request: RecommendationRequest):
-    if not request.query.strip():
-        raise HTTPException(status_code=400, detail="Query cannot be empty")
+    if request.query is None:
+        request.query = ""
         
     try:
         recommender = get_recommender()

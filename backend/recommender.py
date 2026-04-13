@@ -131,46 +131,61 @@ class HybridRecommender:
     def recommend(self, query: str, top_k: int = 5, semantic_weight: float = 0.7, min_price: float = None, max_price: float = None):
         clean_query = self.clean_text(query)
         
-        # 1. Semantic
-        query_emb = self.model.encode([clean_query], convert_to_numpy=True)
-        faiss.normalize_L2(query_emb)
-        distances, indices = self.faiss_index.search(query_emb, min(len(self.df), 200)) # Increased search space
-        
-        semantic_scores = np.zeros(len(self.df))
-        for i, idx in enumerate(indices[0]):
-            if idx != -1:
-                semantic_scores[idx] = distances[0][i]
+        if not clean_query:
+            # Catalog Browse Mode: No query sent, so we return all items sorted by trending/rating.
+            # We assign a default score of 1.0 to ensure they pass frontend filters.
+            hybrid_scores = np.ones(len(self.df))
             
-        semantic_scores = np.clip(semantic_scores, 0.0, 1.0)
-
-        # 2. Lexical
-        tokenized_query = clean_query.split()
-        bm25_scores = self.bm25.get_scores(tokenized_query)
-        
-        bm25_scores = np.clip(bm25_scores / 10.0, 0.0, 1.0)
-
-        # 3. Hybrid Base Score
-        hybrid_scores = (semantic_scores * semantic_weight) + (bm25_scores * (1.0 - semantic_weight))
-
-        # 4. Metadata Boosting
-        # Apply boosts for ratings and status
-        if 'rating' in self.df.columns:
-            # Rating boost: up to 0.1
-            rating_boost = self.df['rating'].astype(float) / 5.0 * 0.1
-            hybrid_scores += rating_boost.values
+            # Apply boosts for ratings and status to naturally sort the catalog
+            if 'rating' in self.df.columns:
+                hybrid_scores += self.df['rating'].astype(float) / 5.0 * 0.1
+            if 'is_trending' in self.df.columns:
+                hybrid_scores += self.df['is_trending'].astype(float) * 0.1
+            if 'is_best_seller' in self.df.columns:
+                hybrid_scores += self.df['is_best_seller'].astype(float) * 0.1
             
-        if 'is_trending' in self.df.columns:
-            # Trending boost: 0.1
-            trending_boost = self.df['is_trending'].astype(float) * 0.1
-            hybrid_scores += trending_boost.values
+            hybrid_scores = np.clip(hybrid_scores, 0.0, 1.0)
+        else:
+            # 1. Semantic
+            query_emb = self.model.encode([clean_query], convert_to_numpy=True)
+            faiss.normalize_L2(query_emb)
+            distances, indices = self.faiss_index.search(query_emb, min(len(self.df), 200)) # Increased search space
             
-        if 'is_best_seller' in self.df.columns:
-            # Best seller boost: 0.1
-            best_seller_boost = self.df['is_best_seller'].astype(float) * 0.1
-            hybrid_scores += best_seller_boost.values
-
-        # Normalize final scores to [0, 1] clipping
-        hybrid_scores = np.clip(hybrid_scores, 0.0, 1.0)
+            semantic_scores = np.zeros(len(self.df))
+            for i, idx in enumerate(indices[0]):
+                if idx != -1:
+                    semantic_scores[idx] = distances[0][i]
+                
+            semantic_scores = np.clip(semantic_scores, 0.0, 1.0)
+    
+            # 2. Lexical
+            tokenized_query = clean_query.split()
+            bm25_scores = self.bm25.get_scores(tokenized_query)
+            
+            bm25_scores = np.clip(bm25_scores / 10.0, 0.0, 1.0)
+    
+            # 3. Hybrid Base Score
+            hybrid_scores = (semantic_scores * semantic_weight) + (bm25_scores * (1.0 - semantic_weight))
+    
+            # 4. Metadata Boosting
+            # Apply boosts for ratings and status
+            if 'rating' in self.df.columns:
+                # Rating boost: up to 0.1
+                rating_boost = self.df['rating'].astype(float) / 5.0 * 0.1
+                hybrid_scores += rating_boost.values
+                
+            if 'is_trending' in self.df.columns:
+                # Trending boost: 0.1
+                trending_boost = self.df['is_trending'].astype(float) * 0.1
+                hybrid_scores += trending_boost.values
+                
+            if 'is_best_seller' in self.df.columns:
+                # Best seller boost: 0.1
+                best_seller_boost = self.df['is_best_seller'].astype(float) * 0.1
+                hybrid_scores += best_seller_boost.values
+    
+            # Normalize final scores to [0, 1] clipping
+            hybrid_scores = np.clip(hybrid_scores, 0.0, 1.0)
 
         # Apply Hard Filtering for Price bounds
         if min_price is not None or max_price is not None:
